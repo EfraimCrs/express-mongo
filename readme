@@ -1,0 +1,33 @@
+nesse curso de node estou aprendendo a receber a resposta no termenial.
+node server.js
+
+obs: instalei a biblioteca "nodemon", pra derrubar o servidor toda hora...
+add la em package.json> scripts> "dev": "nodemon server.js"
+
+1- pra rodar o servidor com o nodemon: terminal> npm run dev
+
+2- pra derrubar o servidor: ctrl + c
+
+3- instalei a biblioteca "express" pra criar o servidor mais facil (src/app.js)
+
+4- no app.js usando o express, criei as rotas para a API de livros.> pra usar iniciar o servidor, basta rodar o comando "npm start" no terminal.
+
+5- para testar as rotas, usei o Postman para fazer requisições HTTP e verificar as respostas da API.
+Post rota: http://localhost:3000/livros
+Get rota: http://localhost:3000/livros/1
+Put rota: http://localhost:3000/livros/1
+Delete rota: http://localhost:3000/livros/1
+
+esse é o famoso CRUD (Create, Read, Update, Delete).
+
+Nesta aula, você aprendeu:
+Como instalar e utilizar os métodos do framework Express para criação de um servidor HTTP e também para gerenciamento de requisições, respostas e criação de rotas;
+Como implementar um CRUD inicial com os métodos HTTP GET, POST, PUT e DELETE, e como utilizar os métodos do Express para cada método;
+Como testar requisições com Postman e quais são as partes de uma requisição HTTP;
+Como utilizar o Express para gerar e enviar respostas adequadas para cada tipo de requisição HTTP.
+
+5- Em src/config/dbConnect.js > Essa função, conectaNaDatabase, serve para estabelecer a conexão entre a sua aplicação Node.js e o seu banco de dados MongoDB.
+link: mongodb+srv://admin:<db_password>@cluster0.8d53qca.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+6- Em src/models/livros.js > se trata de uma funcao pra estruturar os documentos da colecao de "livros" no MongoDB
+(Pense nela como um molde ou um contrato. Ao usar o Mongoose, você não interage diretamente com os documentos do MongoDB. Em vez disso, você cria um modelo (no seu caso, const livro = mongoose.model("livro", livroSchema);) que é uma classe que te dá ferramentas para criar, ler, atualizar e deletar (CRUD) documentos no seu banco de dados.)

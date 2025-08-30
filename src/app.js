@@ -1,4 +1,15 @@
 import express from "express";
+import conectaNaDatabase from "./config/dbConnect.js";
+
+const conexao = await conectaNaDatabase();
+
+conexao.on("error", (error) => {
+  console.error("Erro na conexão com o MongoDB:", error);
+});
+
+conexao.once("open", () => {
+  console.log("Conexão com o MongoDB estabelecida com sucesso!");
+});
 
 const app = express();
 // middleware
