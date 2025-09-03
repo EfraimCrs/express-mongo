@@ -31,3 +31,14 @@ link: mongodb+srv://admin:<db_password>@cluster0.8d53qca.mongodb.net/?retryWrite
 
 6- Em src/models/livros.js > se trata de uma funcao pra estruturar os documentos da colecao de "livros" no MongoDB
 (Pense nela como um molde ou um contrato. Ao usar o Mongoose, você não interage diretamente com os documentos do MongoDB. Em vez disso, você cria um modelo (no seu caso, const livro = mongoose.model("livro", livroSchema);) que é uma classe que te dá ferramentas para criar, ler, atualizar e deletar (CRUD) documentos no seu banco de dados.)
+
+7- instalando da biblioteca Dotenv e Variáveis de Ambiente -> utilizadas para separar informações variáveis sensíveis, como senhas e strings de conexão.
+npm install dotenv
+
+8- mapa da logica do beckend desse sistema, 
+-> Requisicao  para/livros[rotalivros] 
+-> Chama o controller repassando os dados da requicao [controllerlivros] 
+-> processa a requisicao e chama o modelo [modellivro] 
+-> Conecta com o DB e processa a query [BancoDados] 
+
+[BancoDados]-> [modellivro]-> [controllerlivros]-> {respostaHTTP}
